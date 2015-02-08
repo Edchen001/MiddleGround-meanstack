@@ -15,7 +15,6 @@ var refresh = function() {
 };
 
 
-
 $scope.addContact = function() {
 	console.log($scope.poi);
 	$http.post('/poiList', $scope.poi).success(function(response) {

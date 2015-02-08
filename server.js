@@ -4,8 +4,13 @@ var mongojs = require('mongojs');
 var db = mongojs('poiList', ['poiList']);
 var bodyParser = require('body-parser');
 
-app.use(express.static(__dirname + "/public"));
+//setting enviroments
+
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade');
+app.use(express.static(__dirname + "public"));
 app.use(bodyParser.json());
+
 
 app.get('/poiList', function(req, res) {
 	console.log('Received a GET request')
