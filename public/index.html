@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<title>MiddleGround</title>
+</head>
+<body>
+<div class="container" ng-controller="AppCtrl">
+	<h1>MiddleGround</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Action</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input class="form-control" ng-model="poi.name"></td>
+				<td><input class="form-control" ng-model="poi.email"></td>
+				<td><input class="form-control" ng-model="poi.number"></td>
+				<td><button class="btn btn-primary" ng-click="addContact()">Add poi</button></td>
+				<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
+				<button class= "btn btn-info" ng-click="deselect()">Clear</button></td>
+			</tr>
+			<tr ng-repeat= "poi in poiList">
+				<td>{{poi.name}}</td>
+				<td>{{poi.email}}</td>
+				<td>{{poi.number}}</td>
+				<td><button class="btn btn-danger" ng-click ="remove(poi._id)">Remove</button></td>
+				<td><button class="btn btn-warning" ng-click="edit(poi._id)">Edit</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+	<script src="controllers/controller.js"></script>
+</body>
+</html>
