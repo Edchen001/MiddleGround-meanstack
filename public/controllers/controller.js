@@ -1,7 +1,6 @@
-angular
- .module('myApp', [])
- .controller('AppCtrl', AppCtrl)
- .factory("MyYelpAPI", function($http) {
+var myApp = angular.module('myApp', []);
+
+ myApp.factory("myYelpAPI", function($http) {
       return {
           "retrieveYelp": function(name, callback) {
               var method = 'GET';
@@ -24,6 +23,10 @@ angular
           }
       }
   });
+
+myApp.controller('AppCtrl', ['AppCtrl', 'myYelpAPI', function($scope, AppCtrl, myYelpAPI) {
+
+}]);
 
 function AppCtrl($scope, $http) {
 

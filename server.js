@@ -19,6 +19,7 @@ app.get('/poiList', function(req, res) {
 
 app.post('/poiList', function(req, res) {
 	console.log(req.body);
+	// potentially put yelp api here
 	db.poiList.insert(req.body, function(err, doc){
 		res.json(doc);
 	})
