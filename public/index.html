@@ -17,34 +17,43 @@
 			<p id="slogan">Meet me half way.</p>
 		</div>
 
-		<div id="geocomplete">
-			<form>
-				<div id="searchblock">
-					<input name="formatted_address_1" type="text" class="form-control input-lg" placeholder="First address" value="">
-					<br>
-					<input name="formatted_address_2" type="text" class="form-control input-lg" placeholder="Second address" value="">
-					<input name="coords1" type="hidden" value="">
-					<input name="coords2" type="hidden" value="">
-				<br>
-				<button id="routebtn" type="submit" class="btn btn-primary">Find MiddleGround</button>
+		<div id="geocomplete" class="row">
+				<div div class="col-lg-4 col-lg-offset-4">
+					
+						<form>
+							<input name="formatted_address_1" type="text" class="form-control input-lg" placeholder="First address" value="">
+							<br>
+							<input name="formatted_address_2" type="text" class="form-control input-lg" placeholder="Second address" value="">
+							<input name="coords1" type="hidden" value="">
+							<input name="coords2" type="hidden" value="">
+							<br>
+						
+						<span class="input-group-btn">
+							
+							<button id="routebtn" type="submit" class="btn btn-primary">Find MiddleGround</button>
 
-				<select id="myselect" class= "btn btn-primary btn-lg">
-					<option value="DRIVING">Driving</option>
-					<option value="WALKING">Walking</option>
-					<option value="BICYCLING">Bicycling</option>
-					<option value="TRANSIT">Transit</option>
-				</select>
-			
-			</form>
-			</div>
+							<select id="myselect" class= "btn btn-primary btn-lg">
+								<option value="DRIVING">Driving</option>
+								<option value="WALKING">Walking</option>
+								<option value="BICYCLING">Bicycling</option>
+								<option value="TRANSIT">Transit</option>
+							</select>
+
+						</span>
+						</form>
+					
+				</div>
 		</div>
+		
 
-		<div id="map_container"><div id="map_canvas"></div></div>
+		<div id="map_container">
+			<div id="map_canvas"></div>
 
 		<div id="show_poi">
 			<ol><div id="poi">
 				<h2>Mid Points of Interests</h2>
 			</div></ol>
+
 		<div id="error"></div>
 		
 		</div>
@@ -61,6 +70,7 @@
 					</tr>
 				</tbody>
 			</table>
+
 		</div>	
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

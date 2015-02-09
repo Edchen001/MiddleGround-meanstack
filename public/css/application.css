@@ -12,8 +12,8 @@ p { font-size: 20px;}
 	height:2.3em; font-size: 21px;
 }
 
-#searchblock {
-	text-align: center;
+.form-control {
+	width: 100%;
 }
 
 #myselect { 
@@ -25,11 +25,12 @@ p { font-size: 20px;}
 }
 
 #map_container {
-	float: left; padding: 60px;
+	padding: 60px;
 }
 
 #poi{
-	float:left; text-align: center;
+	text-align: center;
+	padding: 60px;
 }
 
 #map_canvas {
@@ -38,14 +39,10 @@ p { font-size: 20px;}
   height: 600px;
 }
 
-#geocomplete{
-	padding: 2em;
-}
 #welcome {
 	text-align: center;
 }
 
-/*#poi{display:none;}*/
 #logo {
   display: inline;
   padding-right: 10px;

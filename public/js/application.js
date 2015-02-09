@@ -13,6 +13,7 @@ $(document).ready(function() {
     Trip.request["destination"] = $form.find('input[name=coords2]').val();
     Trip.request["travelMode"] = Trip.travelOptions[$travelMode];
     Trip.calcRoute();
+
     navigationFn.goToSection('#poi');
 
   })
@@ -23,6 +24,7 @@ $(document).ready(function() {
             }, 10);
         }
     }
+
 });
 
 function initializeMapping() {
@@ -155,7 +157,7 @@ Yelp = {
 
   getYelpResults: function(coordinates) {
     $.ajax({
-      url: '/results',
+      url: '/poiList',
       type: 'POST',
       dataType: 'JSON',
       data: coordinates
@@ -169,6 +171,7 @@ Yelp = {
 
 
 }
+
 
 YelpParser = {
 
@@ -188,7 +191,6 @@ YelpParser = {
         View.renderMarker(myLatLng)
       }
     }
-
 
   },
 
