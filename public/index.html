@@ -1,5 +1,6 @@
 <!doctype html>
-<html ng-app="myApp">
+
+<html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -7,10 +8,11 @@
 	<link rel="stylesheet" href="/css/application.css">
 	<title>MiddleGround</title>
 </head>
-<body>
+
+<body ng-app="myApp">
 	<div class="container" ng-controller="AppCtrl">
 
-		<div class="jumbotron" id ="welcome" style='text-align: center;'>
+		<div class="jumbotron" id ="welcome">
 			<h1><img id ="logo" src="images/mg_logo.svg">MiddleGround</h1>
 			<p id="slogan">Meet me half way.</p>
 		</div>
@@ -18,13 +20,12 @@
 		<div id="geocomplete">
 			<form>
 				<div id="searchblock">
-					<h3>First<input name="formatted_address_1" type="text" class="form-control input-lg" placeholder="First address" value=""></h3>
-					<h3>Second<input name="formatted_address_2" type="text" class="form-control input-lg" placeholder="Second address" value=""></h3>
+					<input name="formatted_address_1" type="text" class="form-control input-lg" placeholder="First address" value="">
+					<br>
+					<input name="formatted_address_2" type="text" class="form-control input-lg" placeholder="Second address" value="">
 					<input name="coords1" type="hidden" value="">
 					<input name="coords2" type="hidden" value="">
-				
 				<br>
-
 				<button id="routebtn" type="submit" class="btn btn-primary">Find MiddleGround</button>
 
 				<select id="myselect" class= "btn btn-primary btn-lg">
@@ -41,35 +42,22 @@
 		<div id="map_container"><div id="map_canvas"></div></div>
 
 		<div id="show_poi">
-			<ol><div id="poi"><h2>Mid Points of Interests</h2></div></ol>
-			<div id="error"></div>
-			</div>
-
+			<ol><div id="poi">
+				<h2>Mid Points of Interests</h2>
+			</div></ol>
+		<div id="error"></div>
+		
+		</div>
 		<table class="table">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Number</th>
-					<th>Action</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
+
 			<tbody>
-				<tr>
-					<td><input class="form-control" ng-model="poi.name"></td>
-					<td><input class="form-control" ng-model="poi.email"></td>
-					<td><input class="form-control" ng-model="poi.number"></td>
-					<td><button class="btn btn-primary" ng-click="addContact()">Add poi</button></td>
-					<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
-						<button class= "btn btn-info" ng-click="deselect()">Clear</button></td>
-					</tr>
+
 					<tr ng-repeat= "poi in poiList">
 						<td>{{poi.name}}</td>
 						<td>{{poi.email}}</td>
 						<td>{{poi.number}}</td>
+					<td><button class="btn btn-primary" ng-click="addContact()">Bookmark</button></td>
 						<td><button class="btn btn-danger" ng-click ="remove(poi._id)">Remove</button></td>
-						<td><button class="btn btn-warning" ng-click="edit(poi._id)">Edit</button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -80,5 +68,5 @@
 		<script src="controllers/controller.js"></script>
 		<script src="/js/application.js"></script>
 		<script src="/js/jquery.geocomplete.js"></script>
-	</body>
-	</html>
+</body>
+</html>

@@ -25,12 +25,11 @@ $(document).ready(function() {
     }
 });
 
-
 function initializeMapping() {
-  var manhattan = new google.maps.LatLng(40.7711329, -73.9741874);
+  var losangeles = new google.maps.LatLng(34.05223, -118.24368);
   var mapOptions = {
     zoom: 13,
-    center: manhattan
+    center: losangeles
   };
   directionsDisplay = new google.maps.DirectionsRenderer();
   directionsService = new google.maps.DirectionsService();
