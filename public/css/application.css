@@ -20,7 +20,7 @@ p {font-size: 20px;}
 #map_container{float: left; margin-left: 3em;}
 #poi{float:left; margin-left: 5em;}
 #map_canvas {
-  width: 970px;
+  width: 800px;
   height: 600px;
 }
 
